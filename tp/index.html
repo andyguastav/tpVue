@@ -10,9 +10,21 @@
 </head>
 <body>
     <div id="app">
-        <!-- Componentes Vue.js -->
-        <expense-form :editing-index="editingIndex" @save-expense="handleSaveExpense"></expense-form>
-        <expense-list :expenses="expenses" @edit-expense="handleEditExpense"></expense-list>
+        <div id="home" v-if="showHomePage" class="centered-content">
+            <h1>Bienvenido a ExpenseApp</h1>
+            <p>Tus Gastos, Tu Vida...</p> 
+            <button @click="showApp">Acceder</button>
+
+
+        </div>
+
+        <div id="mainApp" v-else>
+            <!-- Componentes Vue.js -->
+            <expense-form :editing-index="editingIndex" @save-expense="handleSaveExpense"></expense-form>
+            <expense-list :expenses="expenses" @edit-expense="handleEditExpense"></expense-list>
+        
+        </div>
+
         
     </div>
     <script src="bootstrap/js/jquery.min.js"></script>

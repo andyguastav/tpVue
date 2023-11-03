@@ -43,3 +43,77 @@ h3 {
     background-color: yellow;
   }
   
+
+  /* Estilos para la página de inicio */
+#home {
+    position: relative;
+    height: 100vh;
+    text-align: center;
+    color: white;
+    background: url('imgs/desk-593327_1920.jpg') center/cover no-repeat;
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Estilos para la imagen de fondo */
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+
+/* Estilos para centrar el contenido de la página de inicio */
+.centered-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrar verticalmente */
+    align-items: center; /* Centrar horizontalmente */
+    height: 100vh;
+    text-align: center;
+    color: white;
+    background: url('background.jpg') center/cover no-repeat;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 10px; /* Espacio entre el título y el párrafo */
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 20px; /* Espacio entre el párrafo y el botón */
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+}

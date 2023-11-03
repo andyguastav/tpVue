@@ -174,8 +174,12 @@ new Vue({
     data: {
         expenses: [],
         editingIndex: -1,
+        showHomePage:true,//Muestra la pagina de inicio.
     },
     methods: {
+        showApp() {
+            this.showHomePage  = false; // se Muestra la app principal.
+        },
         handleEditExpense(index) {
             this.editingIndex = index;
         },
