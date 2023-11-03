@@ -1,0 +1,45 @@
+/* Añadir estilos Bootstrap */
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css');
+
+/* Personalizar estilos específicos de la aplicación */
+body {
+    padding: 20px;
+}
+
+h2 {
+    color: #007bff; /* Azul de Bootstrap */
+}
+
+form {
+    margin-top: 20px;
+}
+
+/* Estilos para la tabla de gastos */
+table {
+    width: 100%;
+}
+
+table th {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Estilizar botón de agregar gasto */
+button[type="submit"] {
+    background-color: #28a745; /* Verde de Bootstrap */
+    color: white;
+}
+
+/* Estilos para la sección de estadísticas */
+h3 {
+    margin-top: 20px;
+}
+
+.green-background {
+    background-color: green;
+  }
+  
+  .yellow-background {
+    background-color: yellow;
+  }
+  
