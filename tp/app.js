@@ -85,7 +85,7 @@ Vue.component('expense-form', {
     },
     template: `
         <div>
-            <h2>Registro de Gastos</h2>
+            <h2 class="text-center" id="agregarGasto">Registro de Gastos</h2>
             <form>
                 <label>Fecha:
                     <input v-model="formData.date" type="date" required>
@@ -133,7 +133,7 @@ Vue.component('expense-list', {
     },
     template: `
         <div>
-            <h2>Lista de Gastos</h2>
+            <h2 class="text-center" id="misGastos">Lista de Gastos</h2>
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
@@ -158,7 +158,7 @@ Vue.component('expense-list', {
                     </tr>
                 </tbody>
             </table>
-            <h3>Estadísticas</h3>
+            <h3 class="text-center" id="estadisticas">Estadísticas</h3>
             <div v-for="category in uniqueCategories" :key="category">
                 <strong>{{ category }}:</strong> {{ getTotalByCategory(category) }}
             </div>
@@ -177,8 +177,13 @@ new Vue({
         expenses: [],
         editingIndex: -1,
         showHomePage:true,//Muestra la pagina de inicio.
+        activeTab: 'agregarGasto',
     },
     methods: {
+
+        changeTab(tab) {
+            this.activeTab = tab;
+        },
         showApp() {
             this.showHomePage  = false; // se Muestra la app principal.
         },

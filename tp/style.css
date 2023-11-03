@@ -1,17 +1,20 @@
-/* Añadir estilos Bootstrap */
-@import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css');
-
 /* Personalizar estilos específicos de la aplicación */
 body {
     padding: 20px;
 }
 
-h2 {
-    color: #ff00bf;; /* Azul de Bootstrap */
+.titleApp {
+    color: white;
+    background-color: #ff00bf;
+    border-radius: 4px;
+    height: 10%;
+    text-align: center; /* Centra el texto horizontalmente */
+    padding: 10px; /* Espaciado interno */
 }
 
-form {
-    margin-top: 20px;
+h2, h1, h3 {
+    color: #ff00bf;
+    text-align: center; /* Centra el texto horizontalmente */
 }
 
 /* Estilos para la tabla de gastos */
@@ -20,31 +23,26 @@ table {
 }
 
 table th {
-    background-color: #ff00bf;;
+    background-color: #ff00bf;
     color: white;
 }
 
 /* Estilizar botón de agregar gasto */
 button[type="submit"] {
-    background-color: #28a745; /* Verde de Bootstrap */
+    background-color: #28a745;
     color: white;
 }
 
-/* Estilos para la sección de estadísticas */
-h3 {
-    margin-top: 20px;
+/* Estilos para los botones Agregar y Modificar */
+button[type="button"].green-background {
+    background-color: green;
 }
 
-.green-background {
-    background-color: green;
-  }
-  
-  .yellow-background {
+button[type="button"].yellow-background {
     background-color: yellow;
-  }
-  
+}
 
-  /* Estilos para la página de inicio */
+/* Estilos para la página de inicio */
 #home {
     position: relative;
     height: 100vh;
@@ -63,65 +61,19 @@ h3 {
     border-radius: 10px;
 }
 
-h1 {
-    font-size: 36px;
-}
-
 button {
-    background-color: #ff00bf;;
+    background-color: #ff00bf;
     color: white;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     font-size: 18px;
+    margin: 20px;
 }
-
-/* Estilos para la imagen de fondo */
-.background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-
-/* Estilos para centrar el contenido de la página de inicio */
-.centered-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centrar verticalmente */
-    align-items: center; /* Centrar horizontalmente */
-    height: 100vh;
-    text-align: center;
-    color: white;
-    background: url('background.jpg') center/cover no-repeat;
-}
-
-h1 {
-    font-size: 36px;
-    margin-bottom: 10px; /* Espacio entre el título y el párrafo */
-}
-
-p {
-    font-size: 18px;
-    margin-bottom: 20px; /* Espacio entre el párrafo y el botón */
-}
-
-button {
-    background-color: #ff00bf;;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 18px;
-}
-
 
 /* Estilos para el formulario de registro de gastos */
 form {
-    background-color: #f8f9fa; /* Color de fondo */
+    background-color: #f8f9fa;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -175,4 +127,14 @@ button[type="button"].modify-button {
 
 button[type="button"].modify-button:hover {
     background-color: #d39e00;
+}
+
+/* Estilos generales de navegación activa para los elementos de la barra de navegación */
+.nav-item.active .nav-link {
+    background-color: #ff00bf;
+    color: white;
+}
+
+.nav-link{
+    color:#ff00bf;
 }

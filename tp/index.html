@@ -10,16 +10,35 @@
 </head>
 <body>
     <div id="app">
+        
         <div id="home" v-if="showHomePage" class="centered-content">
             <h1>Bienvenido a ExpenseApp</h1>
             <p>Tus Gastos, Tu Vida...</p> 
             <button @click="showApp">Acceder</button>
             
-
-
         </div>
 
         <div id="mainApp" v-else>
+            <!-- ... -->
+<header>
+    <nav>
+        <ul class="nav nav-tabs">
+            <li class="nav-item" :class="{ 'active': activeTab === 'agregarGasto' }">
+                <a class="nav-link" href="#agregarGasto" @click="changeTab('agregarGasto')">Agregar Gasto</a>
+            </li>
+            <li class="nav-item" :class="{ 'active': activeTab === 'misGastos' }">
+                <a class="nav-link" href="#misGastos" @click="changeTab('misGastos')">Mis Gastos</a>
+            </li>
+            <li class="nav-item" :class="{ 'active': activeTab === 'estadisticas' }">
+                <a class="nav-link" href="#estadisticas" @click="changeTab('estadisticas')">Estadísticas</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<!-- ... -->
+
+            
+            <h1 class="text-center titleApp">EXPENSAPP</h1>
             <!-- Componentes Vue.js -->
             <expense-form :editing-index="editingIndex" @save-expense="handleSaveExpense"></expense-form>
             <expense-list :expenses="expenses" @edit-expense="handleEditExpense"></expense-list>
