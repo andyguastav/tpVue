@@ -7,7 +7,7 @@ body {
 }
 
 h2 {
-    color: #007bff; /* Azul de Bootstrap */
+    color: #ff00bf;; /* Azul de Bootstrap */
 }
 
 form {
@@ -20,7 +20,7 @@ table {
 }
 
 table th {
-    background-color: #007bff;
+    background-color: #ff00bf;;
     color: white;
 }
 
@@ -68,7 +68,7 @@ h1 {
 }
 
 button {
-    background-color: #007bff;
+    background-color: #ff00bf;;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -110,10 +110,69 @@ p {
 }
 
 button {
-    background-color: #007bff;
+    background-color: #ff00bf;;
     color: white;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     font-size: 18px;
+}
+
+
+/* Estilos para el formulario de registro de gastos */
+form {
+    background-color: #f8f9fa; /* Color de fondo */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+button[type="button"] {
+    background-color: #ff00bf;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 3px;
+}
+
+button[type="button"]:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para el botón "Cancelar" */
+button[type="button"].cancel-button {
+    background-color: #dc3545;
+}
+
+button[type="button"].cancel-button:hover {
+    background-color: #c82333;
+}
+
+/* Estilo para el botón "Modificar" */
+button[type="button"].modify-button {
+    background-color: #ffc107;
+}
+
+button[type="button"].modify-button:hover {
+    background-color: #d39e00;
 }

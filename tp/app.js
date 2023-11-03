@@ -103,7 +103,7 @@ Vue.component('expense-form', {
                 v-bind:class="{ 'green-background': buttonText === 'Agregar', 'yellow-background': buttonText === 'Modificar' }">
                 {{ buttonText }}
                 </button>
-                <button type="button" @click="cancelEdit" v-if="editing">Cancelar</button>
+                <button type="button" @click="cancelEdit" v-if="editing" class="cancel-button">Cancelar</button>
             </form>
         </div>
     `,
@@ -134,13 +134,14 @@ Vue.component('expense-list', {
     template: `
         <div>
             <h2>Lista de Gastos</h2>
-            <table>
+            <table class="table table-striped table-hover">
                 <thead>
                     <tr>
                         <th>Fecha</th>
                         <th>Categoría</th>
                         <th>Descripción</th>
                         <th>Monto</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -149,10 +150,11 @@ Vue.component('expense-list', {
                         <td>{{ expense.category }}</td>
                         <td>{{ expense.description }}</td>
                         <td>{{ expense.amount }}</td>
-                        <td><button @click="deleteExpense(index)">Eliminar</button></td>
                         <td>
+                            <button @click="deleteExpense(index)">Eliminar</button>
                             <button @click="editExpense(index)">Editar</button>
                         </td>
+                            
                     </tr>
                 </tbody>
             </table>
