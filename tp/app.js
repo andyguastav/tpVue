@@ -31,6 +31,7 @@ Vue.component('expense-form', {
 
                 this.resetFormData();
                 this.cancelEdit();
+                this.saveExpensesToLocalStorage(); // Guardar en Local Storage
             }
         },
 
@@ -47,10 +48,12 @@ Vue.component('expense-form', {
                 // Reemplazar el elemento en el arreglo
                 this.$root.expenses[index] = updatedExpense;
                 
+                
                 Vue.set(this.$root.expenses, index, updatedExpense);
         
                 this.resetFormData();
                 this.cancelEdit();
+                this.saveExpensesToLocalStorage(); // Guardar en Local Storage
                 this.$emit('save-expense');
             }
         },
@@ -67,6 +70,10 @@ Vue.component('expense-form', {
         cancelEdit() {
             this.$root.editingIndex = -1;
           },
+        saveExpensesToLocalStorage() {
+            const expensesJSON = JSON.stringify(this.$root.expenses);
+            localStorage.setItem('expenses', expensesJSON);
+        },
     },
     watch: {
         editingIndex(newValue) {
@@ -110,7 +117,7 @@ Vue.component('expense-form', {
 });
 
 Vue.component('expense-list', {
-    props: ['expenses'],
+    props: ['expenses' , 'updateLocalStorage'],
     methods: {
         getTotalByCategory(category) {
             return this.expenses.reduce((total, expense) => {
@@ -124,6 +131,8 @@ Vue.component('expense-list', {
         deleteExpense(index) {
             if (confirm("¿Seguro que desea eliminar este gasto?")) {
                 this.expenses.splice(index, 1);
+
+                this.updateLocalStorage();
             }
         },
 
@@ -193,5 +202,22 @@ new Vue({
         handleSaveExpense() {
             this.editingIndex = -1;
         },
+
+        updateLocalStorage() {
+            // Actualiza el LocalStorage con el arreglo de gastos
+            localStorage.setItem('expenses', JSON.stringify(this.expenses));
+        },
+        loadExpensesFromLocalStorage() {
+            const expensesJSON = localStorage.getItem('expenses');
+            return expensesJSON ? JSON.parse(expensesJSON) : [];
+        },
+
     },
+    //recupera lo guardado en localStorage.
+
+    created() {
+        // Cargar los gastos del LocalStorage al inicio
+        this.expenses = this.loadExpensesFromLocalStorage();
+    },
+
 });

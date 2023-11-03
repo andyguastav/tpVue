@@ -41,7 +41,7 @@
             <h1 class="text-center titleApp">EXPENSAPP</h1>
             <!-- Componentes Vue.js -->
             <expense-form :editing-index="editingIndex" @save-expense="handleSaveExpense"></expense-form>
-            <expense-list :expenses="expenses" @edit-expense="handleEditExpense"></expense-list>
+            <expense-list :expenses="expenses" :update-local-storage="updateLocalStorage" @edit-expense="handleEditExpense"></expense-list>
         
         </div>
 
